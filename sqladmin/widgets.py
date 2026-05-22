@@ -120,5 +120,7 @@ class BooleanInputWidget(widgets.Input):
             kwargs["checked"] = True
 
         return Markup(
-            '<div class="form-switch d-flex align-items-center h-100">%s</div>'
-        ) % Markup.escape(super().__call__(field, **kwargs))
+            '<div class="form-switch d-flex align-items-center h-100">'
+            + str(Markup.escape(super().__call__(field, **kwargs)))
+            + "</div>"
+        )  # nosec
